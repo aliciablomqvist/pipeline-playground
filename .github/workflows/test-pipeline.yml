@@ -1,0 +1,31 @@
+name: Simple Two-Step Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Kör pipelinen när kod pushas till main-grenen
+
+jobs:
+  step-one:
+    name: Checkout and Test Code
+    runs-on: ubuntu-latest  # Miljön där jobbet körs
+
+    steps:
+    - name: Checkout Code  # Steg 1: Hämta kod
+      uses: actions/checkout@v3
+
+    - name: Run a Simple Test  # Steg 2: Kör ett test
+      run: |
+        echo "Running a test"
+        echo "Test successful!"
+
+  step-two:
+    name: Deployment Step
+    needs: step-one  # Detta jobb körs efter 'step-one' är klart
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deployment Simulation  # Steg 1: Simulera distribution
+      run: |
+        echo "Starting deployment..."
+        echo "Deployment successful!"
