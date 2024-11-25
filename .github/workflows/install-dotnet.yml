@@ -1,0 +1,29 @@
+# Denna yaml installerar .NET
+
+# Namn på workflowet.
+name: Install .NET
+
+# Trigger: Kör workflowet när en commit görs på main-branchen.
+on:
+  push: # Triggar vid en push.
+    branches:
+      - main # Kör endast på main-branchen.
+
+# Definierar jobb.
+jobs:
+  # Ett jobb med namnet "install-dotnet".
+  install-dotnet:
+    # Använder en virtuell maskin baserad på Ubuntu.
+    runs-on: ubuntu-latest
+
+    # Steg att köra inom jobbet.
+    steps:
+      # Ett steg som installerar .NET.
+      - name: Set up .NET # Namn på steget.
+        uses: actions/setup-dotnet@v3 # Använder en färdig GitHub Action för att installera .NET.
+        with: # Skickar parametrar till actionen.
+          dotnet-version: '6.0' # Specifik version av .NET att installera.
+
+      # Ett steg som kontrollerar att installationen lyckades genom att skriva ut versionen.
+      - name: Check .NET version # Namn på steget.
+        run: dotnet --version # Kör Bash-kommandot för att visa versionen av .NET.
