@@ -1,0 +1,28 @@
+# Yaml för att använda miljövariabler
+
+# Namn på workflowet.
+name: Environment Variables
+
+# Trigger: Workflowet körs vid varje commit på main-branchen.
+on:
+  push:
+    branches:
+      - main # Kör endast på main-branchen.
+
+# Definierar jobb.
+jobs:
+  # Ett jobb med namnet "use-env".
+  use-env:
+    # Använder en Ubuntu-baserad virtuell maskin.
+    runs-on: ubuntu-latest
+
+    # Lista över steg.
+    steps:
+      # Ett steg som definierar en miljövariabel.
+      - name: Define environment variables # Namn på steget.
+        run: echo "GREETING=Hej från YAML!" >> $GITHUB_ENV 
+        # Skapar en miljövariabel med namnet GREETING och sätter dess värde till "Hej från YAML!".
+
+      # Ett steg som använder miljövariabeln och skriver ut dess värde.
+      - name: Print environment variable # Namn på steget.
+        run: echo $GREETING # Skriver ut värdet av miljövariabeln GREETING.
