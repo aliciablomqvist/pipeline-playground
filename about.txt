@@ -1,0 +1,14 @@
+### Om pipelines
+
+#En pipeline i DevOps refererar till den automatiserade process som hanterar kodens flöde från utveckling till produktion.
+#Detta inkluderar steg som kodkompilering, testning, distribution och övervakning. Pipelines säkerställer att varje kodändring testas och godkänns innan den når produktionsmiljön.
+
+### Om YAML  - syntax och struktur
+
+YAML-syntax, en strukturerad och lättläst data serialiseringsspråk.
+
+- **YAML** används för att definiera workflows och har fördelen att vara en supersätt till JSON, men är enklare att läsa och arbeta med.
+- Grundläggande egenskaper i YAML:
+    - Använder indentering för att definiera block (två mellanslag standard).
+    - Sekvenser och listor skapas enkelt, och olika datatyper (t.ex. text, nummer, boolska värden) kan blandas.
+    - Används ofta för Infrastructure as Code (IaC).   
