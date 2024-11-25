@@ -1,0 +1,22 @@
+# Denna yaml kod skriver ut en log
+# Namn på workflowet. Detta visas i fliken "Actions" på GitHub.
+name: Print Log
+
+# Trigger: Workflowet körs när en commit görs på main-branchen.
+on:
+  push: # Triggar vid en push.
+    branches: # Specifikt vilka grenar som triggar workflowet.
+      - main # Workflow körs endast på main-branchen.
+
+# Definierar de jobb som ska köras.
+jobs:
+  # Ett jobb med namnet "print-log".
+  print-log:
+    # Anger vilken typ av virtuell maskin/workflow-runner som ska användas.
+    runs-on: ubuntu-latest # Kör på den senaste versionen av Ubuntu Linux.
+
+    # Lista över steg som ska köras i detta jobb.
+    steps:
+      # Ett steg för att skriva ut en hälsning i loggen.
+      - name: Print a greeting # Namn på steget, visas i loggen.
+        run: echo "Hej!" # Kör Bash-kommandot för att skriva ut texten.
