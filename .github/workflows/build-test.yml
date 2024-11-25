@@ -1,0 +1,37 @@
+# Yaml kod för att bygga och testa Hello World projektet
+
+# Namn på workflowet.
+name: Build and Test
+
+# Trigger: Workflow körs när en commit görs på main-branchen.
+on:
+  push:
+    branches:
+      - main # Kör endast på main-branchen.
+
+# Definierar jobb.
+jobs:
+  # Ett jobb med namnet "build-and-test".
+  build-and-test:
+    # Använder en Ubuntu-baserad virtuell maskin.
+    runs-on: ubuntu-latest
+
+    # Lista över steg.
+    steps:
+      # Ett steg som checkar ut koden från GitHub.
+      - name: Check out code # Namn på steget.
+        uses: actions/checkout@v3 # Använder en färdig action för att checka ut koden.
+
+      # Ett steg som installerar .NET.
+      - name: Set up .NET # Namn på steget.
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0' # Specifik version av .NET att använda.
+
+      # Ett steg som bygger projektet.
+      - name: Build project # Namn på steget.
+        run: dotnet build # Kör kommandot för att bygga projektet.
+
+      # Ett steg som kör testerna.
+      - name: Test project # Namn på steget.
+        run: dotnet test # Kör kommandot för att testa projektet.
