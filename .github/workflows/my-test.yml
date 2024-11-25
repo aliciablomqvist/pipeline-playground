@@ -1,0 +1,25 @@
+
+# Namn
+name: Namn på mitt workflow 
+
+# Trigger
+on: 
+push: # Triggar vid en push
+branches: #Vilka grenar som triggar workflow
+- main # Trigger körs på main
+
+# Definerar jobs som ska köras
+jobs:
+# Job med namnet print log
+print-log:
+runs-on: ubunto-latest #Vilken VM eller workflow runner som ska användas i detta fall senaste verisionen av ubunto
+
+# vilka steps som körs i detta job
+steps:
+
+# steg som skriver ut ett meddelande i loggen
+- name: Namn på steget
+run: echo "Hej! Detta symboliserar ett bash-kommando som skriver ut text genom echo"
+
+
+
