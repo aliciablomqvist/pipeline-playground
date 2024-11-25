@@ -1,0 +1,3 @@
+### Pipelines
+
+En pipeline i DevOps refererar till den automatiserade process som hanterar kodens flöde från utveckling till produktion. Detta inkluderar steg som kodkompilering, testning, distribution och övervakning. Pipelines säkerställer att varje kodändring testas och godkänns innan den når produktionsmiljön.
