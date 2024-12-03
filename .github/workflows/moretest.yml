@@ -1,12 +1,12 @@
 name: My practice
 on: workflow-dispatch
-  jobs:
-    testing-to-print-a-file:
+
+jobs:
+  testing-to-print-a-file:
       runs-on: ubunto-latest
       steps:
-        -name: Checkout repo
+        - name: Checkout repo
           uses: actions/checkout@v4
 
-        -name: Print a file test
+        - name: Print a file test
           run: cat textfil.tx
-
