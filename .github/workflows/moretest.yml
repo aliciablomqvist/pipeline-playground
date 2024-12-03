@@ -1,5 +1,5 @@
 name: My practice
-on: workflow-dispatch
+on: workflow_dispatch
 
 jobs:
   testing-to-print-a-file:
