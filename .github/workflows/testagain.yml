@@ -1,0 +1,12 @@
+name: My practice
+on: workflow_dispatch
+
+jobs:
+  testing-to-print-a-file:
+    runs-on: ubunto-latest
+    steps:
+        - name: Checkout a repo
+          uses: actions/checkout@v4
+
+        - name: Print a file test
+          run: cat textfil.tx
