@@ -1,0 +1,13 @@
+name: Write about file
+
+on:
+  workflow_dispatch
+
+jobs: 
+  Print_aboutfile:
+    runs-on: ubuntu_latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: print out file
+        run: cat about.txt
